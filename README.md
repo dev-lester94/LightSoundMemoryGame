@@ -40,7 +40,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![](https://github.com/dev-lester94/LightSoundMemoryGame/blob/master/LightSoundMemoryGame2.gif)
+![](https://github.com/dev-lester94/LightSoundMemoryGame/blob/master/LightSoundMemoryGame3.gif)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
