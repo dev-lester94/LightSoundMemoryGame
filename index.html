@@ -17,25 +17,39 @@
     <h1>Light and Sound Memory Game</h1>
     
     <p>
-      Welcome to the game! Repat back the pattern by pressing buttons.
+      Welcome to the game! Repeat back the pattern by pressing buttons.
     </p>
     
-    <button id="startBtn" onclick="startGame()">Start</button>
-    <button id="stopBtn" onclick="stopGame()" class="hidden">
-      Stop
-    </button>
-    
+<!--     <button id="startBtn" onclick="startGame()">Start</button>
+    <button id="stopBtn" onclick="stopGame()" class="hidden">Stop</button>
+     -->
     <div id="strikes">
       Strikes: <span>3</span>
     </div>
 
-    <div id="gameButtonArea">
+<!--     <div id="gameButtonArea">
       <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"> </button>
       <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"> </button>
       <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"> </button>
       <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"> </button>
-      <button id="button5" onclick="guess(5)" onmousedown="startTone(4)" onmouseup="stopTone()"> </button>
+      <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()"> </button>
+    </div> -->
+    
+    <div class = "circle">
+
+      <button class="sect" id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"> </button>
+      <button class="sect" id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"> </button>
+      <button class="sect" id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"> </button>
+      <button class="sect" id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"> </button>
+      <button class="sect" id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()"> </button>
+
+      <div class = "center"> 
+          <button id="startBtn" class="roundpadding" onclick="startGame()">Start</button>
+          <button id="stopBtn" onclick="stopGame()" class="hidden roundpadding">Stop</button>
+      </div>
     </div>
     
+    
+
   </body>
 </html>

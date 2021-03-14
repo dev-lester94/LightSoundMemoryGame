@@ -4,7 +4,7 @@
 
 Submitted by: **Lester Zhang**
 
-Time spent: **5** hours spent in total
+Time spent: **7** hours spent in total
 
 Link to project: https://glitch.com/edit/#!/fork-precious-whip
 
@@ -22,7 +22,7 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-* [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [X] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
 * [ ] Buttons use a pitch (frequency) other than the ones in the tutorial
 * [X] More than 4 functional game buttons
 * [X] Playback speeds up on each turn
@@ -34,13 +34,13 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app!
+- [X] Playing audio for incorrect button press in sequence
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![](https://github.com/dev-lester94/LightSoundMemoryGame/blob/master/LightSoundMemoryGame.gif)
 
+![](https://github.com/dev-lester94/LightSoundMemoryGame/blob/master/LightSoundMemoryGame2.gif)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
@@ -52,6 +52,12 @@ Online resources:
 https://www.w3schools.com/js/js_timing.asp
 https://www.w3schools.com/cssref/css_colors.asp
 https://stackoverflow.com/questions/55026293/google-chrome-javascript-issue-in-getting-user-audio-the-audiocontext-was-not 
+
+Update (3/13/21)
+Made the board circular with the start and stop button in the middle. A minor glitch where the buttons
+can not be press near the center.
+https://stackoverflow.com/questions/29006214/how-to-divide-a-circle-into-12-equal-parts-with-color-using-css3-javascript
+
 
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
