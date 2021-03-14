@@ -11,10 +11,7 @@ h1 {
   font-family: verdana, arial, sans-serif;
 }
 
-button{
-  padding:10px;
-  border-radius: 10px;
-}
+
 
 #gameButtonArea > button{
   width:200px;
@@ -48,6 +45,7 @@ button{
 
 #button1:active,#button1.lit {
     background:green;
+
 }
 
 #button2:active,#button2.lit {
@@ -69,4 +67,82 @@ button{
 #strikes{
   margin-top:5px;
   margin-bottom:5px;
+  font-size:20px;
 }
+
+
+.circle{
+
+  position: relative;
+  border: 10px solid black;
+  padding: 0;
+  margin: 1em auto;
+  width: 25em;
+  height: 25em;
+  border-radius: 50%;
+
+  overflow: hidden;
+}
+
+
+.sect{
+  border-radius: 0;
+   overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  transform-origin: 0% 100%;
+}
+
+
+.sect:first-child {
+  
+  transform: rotate(0deg) skewY(-18deg);
+}
+
+.sect:nth-child(2) {
+  transform: rotate(72deg) skewY(-18deg);
+}
+
+.sect:nth-child(3) {
+  transform: rotate(144deg) skewY(-18deg);
+}
+
+.sect:nth-child(4) {
+  transform: rotate(216deg) skewY(-18deg);
+}
+
+.sect:nth-child(5) {
+  transform: rotate(288deg) skewY(-18deg);
+}
+
+
+
+.center{
+
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  text-align: center;
+ overflow: hidden;
+  line-height: 200px;
+}
+
+.roundpadding{
+  
+  padding:40px;
+  border-radius:50%;
+  border: 5px solid black;
+  background:white;
+  font-size: 20px;
+ 
+}
+
+button:active{
+  outline:none;
+}
+

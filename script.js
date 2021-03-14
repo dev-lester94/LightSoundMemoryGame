@@ -54,8 +54,23 @@ const freqMap = {
   2: 329.6,
   3: 392,
   4: 466.2,
-  5: 500.2
+  5: 500.2,
+  6: 150.4
 }
+
+function clearScoreToWhite(){
+  document.querySelector("#strikes > span").style.color="white";
+}
+function playIncorrectTone(len){
+  o.frequency.value = freqMap[6]
+  g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
+  tonePlaying = true
+  setTimeout(function(){
+    stopTone()
+  },len)
+}
+
+
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
   g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
@@ -102,13 +117,20 @@ function playClueSequence(){
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
     delay += clueHoldTime 
     delay += cluePauseTime;
-    clueHoldTime = clueHoldTime - 35;
+    if(progress <=2){
+      clueHoldTime = clueHoldTime - 35;
+    }else if(progress <=5){
+      clueHoldTime = clueHoldTime - 40;
+    }else {
+      clueHoldTime = clueHoldTime - 50;
+    }
   }
   
   clueHoldTime = tempClueHoldTime;
 }
 
 function loseGame(){
+  stopTone();
   setTimeout(function() {
     stopGame();
   	alert("Game Over. You lost.");
@@ -144,15 +166,26 @@ function guess(btn){
       guessCounter++;
     }
   }else{
-    
+    playIncorrectTone(800);
     if(currentStrikes == 1){
       currentStrikes--;
       //console.log("currentStrikes: " + currentStrikes);
       document.querySelector("#strikes > span").innerHTML = currentStrikes;
+      document.querySelector("#strikes > span").style.color="red";
+      setTimeout(function(){
+        clearScoreToWhite();
+      },200)
+
       loseGame();
     }else{
       currentStrikes--;
       document.querySelector("#strikes > span").innerHTML = currentStrikes;
+      document.querySelector("#strikes > span").style.color="red";
+      setTimeout(function(){
+        clearScoreToWhite();
+      },200)
+
+
     }
     
   }
