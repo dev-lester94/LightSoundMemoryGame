@@ -4,7 +4,7 @@
 
 Submitted by: **Lester Zhang**
 
-Time spent: **7** hours spent in total
+Time spent: **8** hours spent in total
 
 Link to project: https://glitch.com/edit/#!/fork-precious-whip
 
@@ -23,14 +23,14 @@ The following **required** functionality is complete:
 The following **optional** features are implemented:
 
 * [X] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
-* [ ] Buttons use a pitch (frequency) other than the ones in the tutorial
+* [X] Buttons use a pitch (frequency) other than the ones in the tutorial
 * [X] More than 4 functional game buttons
 * [X] Playback speeds up on each turn
 * [X] Computer picks a different pattern each time the game is played
 * [X] Player only loses after 3 mistakes (instead of on the first mistake)
 * [ ] Game button appearance change goes beyond color (e.g. add an image)
 * [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
-* [ ] User has a limited amount of time to enter their guess on each turn
+* [X] User has a limited amount of time to enter their guess on each turn
 
 The following **additional** features are implemented:
 
@@ -55,9 +55,10 @@ https://stackoverflow.com/questions/55026293/google-chrome-javascript-issue-in-g
 
 Update (3/13/21)
 Made the board circular with the start and stop button in the middle. A minor glitch where the buttons
-can not be press near the center.
+can not be press near the center. I also implemented the ticking time clock where the person has 15 seconds to make their guess.
+A minor glitch where the time  UI is updated back to 15 after the time starts to countdown but not when the next sequence starts.
 https://stackoverflow.com/questions/29006214/how-to-divide-a-circle-into-12-equal-parts-with-color-using-css3-javascript
-
+https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
 
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 

@@ -13,15 +13,21 @@ var guessCounter = 0;
 
 var currentStrikes = 3;
 
+var downloadTimer;
+
 
 function startGame(){
   //initialize game variables
+  clearInterval(downloadTimer);
+  document.getElementById("time").classList.remove("hidden");
   context.resume()
   progress = 0;
   gamePlaying = true;
   randomPattern();
   
   // swap the Start and Stop buttons
+   document.querySelector("#time > span").innerhtml = "15";
+  document.querySelector("#time > span").style.color = "white";
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
@@ -29,6 +35,10 @@ function startGame(){
 
 function stopGame(){
   gamePlaying = false;
+  clearInterval(downloadTimer);
+   document.querySelector("#time > span").innerhtml = "15";
+  document.querySelector("#time > span").style.color = "white";
+   document.getElementById("time").classList.add("hidden");
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
   currentStrikes = 3;
@@ -100,39 +110,102 @@ function clearButton(btn){
 }
 
 function playSingleClue(btn){
+  
   if(gamePlaying){
     lightButton(btn);
     playTone(btn,clueHoldTime);
+    //clearInterval(downloadTimer);
     setTimeout(clearButton,clueHoldTime,btn);
   }
+  
+      //clearInterval(downloadTimer);
 }
 
+function startTimer(){
+  
+  console.log("why");
+  //clearInterval(downloadTimer);
+  var timeleft = 15;
+   document.querySelector("#time > span").innerhtml = "15";
+  document.querySelector("#time > span").style.color = "white";
+  downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+       clearInterval(downloadTimer);
+      loseGame();
+      
+    }
+    
+    if(timeleft <=3){
+        document.querySelector("#time > span").style.color = "red";
+    }
+    console.log("jere");
+    document.querySelector("#time > span").innerHTML = timeleft;
+    timeleft -= 1;
+  }, 1000);
+  
+  
+  document.querySelector("#time > span").innerhtml = "15";
+  document.querySelector("#time > span").style.color = "white";
+   //clearInterval(downloadTimer);
+}
+
+
+
 function playClueSequence(){
+  console.log("updatetimer");
+    document.querySelector("#time > span").innerhtml = "15";
+  document.querySelector("#time > span").style.color = "green";
+
+  clearInterval(downloadTimer)
+  console.log("clearedIntefrval");
+  //console.log("clear sequeunce");
   guessCounter = 0;
   clueHoldTime = clueHoldTime - (25 * progress);
   let tempClueHoldTime = clueHoldTime;
+  let countime = tempClueHoldTime;
   let delay = nextClueWaitTime; //set delay to initial wait time
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
+    //clearInterval(downloadTimer)
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
+    
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
     delay += clueHoldTime 
     delay += cluePauseTime;
     if(progress <=2){
       clueHoldTime = clueHoldTime - 35;
+       //countime  +=35;
     }else if(progress <=5){
       clueHoldTime = clueHoldTime - 40;
+      //countime  +=40;
     }else {
       clueHoldTime = clueHoldTime - 50;
+      //countime  +=50;
     }
   }
-  
+  clearInterval(downloadTimer)
   clueHoldTime = tempClueHoldTime;
+  console.log("will start timer");
+  
+ 
+  console.log("delay: " + delay);
+   document.querySelector("#time > span").innerhtml = "15";
+  document.querySelector("#time > span").style.color = "white";
+  setTimeout(startTimer, delay-nextClueWaitTime);
+   //console.log("updatetimeerui");
+  
+  //startTimer();
+  
+  
+  
+  //timeleft = 10;
+
 }
 
 function loseGame(){
   stopTone();
   setTimeout(function() {
     stopGame();
+    document.querySelector("#time > span").innerHTML = 15;
   	alert("Game Over. You lost.");
     
   },100);
@@ -152,13 +225,17 @@ function guess(btn){
     
     return;
   }
+  //clearInterval(downloadTimer)
+  //startTimer();
 
   // add game logic here
   if(btn == pattern[guessCounter]){
     if(guessCounter == progress){
       if(guessCounter == pattern.length-1){
+        clearInterval(downloadTimer);
         winGame();
       }else{
+        clearInterval(downloadTimer);
         progress++;
         playClueSequence();
       }
